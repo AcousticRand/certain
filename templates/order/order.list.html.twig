@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Items</th>
+        </tr>
+        {# @var orders Order[] #}
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.code }}</td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    {# @var item Item #}
+                    {% for item in order.items %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.price |  }}</td>
+                        </tr>
+
+                    {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        {% else %}
+            <tr><td colspan="3">No Orders!</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}

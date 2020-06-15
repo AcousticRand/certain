@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Personnel by Role</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Role(s)</th>
+            <th>Actions</th>
+        </tr>
+        {# @var personnel Personnel[] #}
+        {% for person in personnel %}
+            <tr>
+                <td>{{ person.lastNameFirst }}</td>
+                <td>{{ person.code }}</td>
+                <td>
+                    {% for prole in person.roles %}
+                        <a href="{{ path('role_show', {roleKey: prole}) }}">{{ prole }}</a>
+                    {% endfor %}
+                </td>
+                <td><a href="{{ path('personnel_show', {code: person.code}) }}">View Person</a></td>
+            </tr>
+        {% else %}
+            <tr><td colspan="3">No personnel in role!</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}

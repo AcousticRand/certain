@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Customers{% endblock %}
+{% block body %}
+    <h1>Customers/URLs for</h1>
+    <h2>{{ person.code}}: {{ person.fullName }}</h2>
+    {% if customers is null %}
+        <h3>No customers associated.</h3>
+    {% else %}
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>URLs</th>
+            </tr>
+            {# @var customers Customer[] #}
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.code }}</td>
+                    <td>{{ customer.company }} ({{ customer.name }})</td>
+                    <td>
+                        {%  for url in customer.urls %}
+                        {{ url['url'] }}</br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,55 @@
+version: '3.8'
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/16
+
+services:
+  web:
+    image: registry.lcgosc.com/dev/httpd:2.4
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - php
+    volumes:
+      - ../:/app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+  php:
+    image: webdevops/php-dev:7.4
+    volumes:
+      - ../:/app
+      - ~/.ssh:/home/application/.ssh
+    environment:
+      XDEBUG_REMOTE_HOST: "172.16.0.1"
+      XDEBUG_REMOTE_PORT: 9000
+      php.max_input_vars: 50000
+      php.memory_limit: "2048M"
+      POSTFIX_RELAYHOST: "[mailcatch]:1025"
+  mailcatch:
+    image: mailhog/mailhog
+    ports:
+    - "8025:8025" # Access mail at http://127.0.0.1:8025
+    volumes:
+    - mail:/home/mailhog
+    environment:
+      MH_STORAGE: "maildir"
+      MH_MAILDIR_PATH: "/home/mailhog"
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ../data/db:/data/db
+      - ./db-scripts:/docker-entrypoint-initdb.d
+    environment:
+      MONGO_INITDB_DATABASE: cert
+
+volumes:
+  mail:

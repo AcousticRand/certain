@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Customers</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Code</th>
+            <th>Platform</th>
+        </tr>
+        {# @var customers Customer[] #}
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.company }}</td>
+                <td>{{ customer.code }}</td>
+                <td>
+                    {% for prole in person.roles %}
+                        <a href="{{ path('role_show', {roleKey: prole}) }}">{{ prole }}</a>
+                    {% endfor %}
+                </td>
+                <td><a href="{{ path('personnel_show', {code: person.code}) }}">View Person</a></td>
+            </tr>
+        {% else %}
+            <tr><td colspan="3">No personnel in role!</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
