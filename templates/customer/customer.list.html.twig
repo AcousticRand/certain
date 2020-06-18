@@ -2,28 +2,26 @@
 
 {% block body %}
     <h1>Customers</h1>
+    {% if platform is defined %}
+    <h2>Platform: {{ platform }}</h2>
+    {% endif %}
     <table>
         <tr>
+            <th>Code</th>
             <th>Name</th>
             <th>Company</th>
-            <th>Code</th>
             <th>Platform</th>
         </tr>
         {# @var customers Customer[] #}
         {% for customer in customers %}
             <tr>
+                <td><a href="{{ path('customer_show', {customerCode: customer.code}) }}">{{ customer.code }}</a></td>
                 <td>{{ customer.name }}</td>
                 <td>{{ customer.company }}</td>
-                <td>{{ customer.code }}</td>
-                <td>
-                    {% for prole in person.roles %}
-                        <a href="{{ path('role_show', {roleKey: prole}) }}">{{ prole }}</a>
-                    {% endfor %}
-                </td>
-                <td><a href="{{ path('personnel_show', {code: person.code}) }}">View Person</a></td>
+                <td><a href="{{ path('customer_in_platform_list', {platform: customer.platform}) }}">{{ customer.platform }}</a></td>
             </tr>
         {% else %}
-            <tr><td colspan="3">No personnel in role!</td></tr>
+            <tr><td colspan="3">No customers{% if platform is defined %} in platform: {{ platform }}{% endif %}!</td></tr>
         {% endfor %}
     </table>
 {% endblock %}

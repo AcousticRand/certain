@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Customer</h1>
+    <table>
+        <tr>
+            <th>Code</th>
+            <td>{{ customer.code }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ customer.name }}</td>
+        </tr>
+        <tr>
+            <th>Company</th>
+            <td>{{ customer.company }}</td>
+        </tr>
+        <tr>
+            <th>PM</th>
+            <td>
+                <a href="{{ path('personnel_show', {code: pm.code}) }}">{{ pm.fullName }}</a>
+                <a href="mailto:{{ pm.email }}" class="btn-sm btn-primary">Email</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Platform</th>
+            <td>{{ customer.platform }}</td>
+        </tr>
+        <tr>
+            <th>URLs</th>
+            <td>
+                {% if urls is null %}
+                    (No urls for this customer.)
+                {% else %}
+                    <table class="table table-hover">
+                        <tr>
+                            <th>URL</th>
+                            <th>SSL Expire Date</th>
+                            <th>Last Checked</th>
+                        </tr>
+                    {% for url in urls %}
+                        <tr>
+                            <td><a href="https://{{ url.url }}/{{ url.path }}">https://{{ url.url }}/{{ url.path }}</a></td>
+                            <td>{{ url.expireDate|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
+                            <td>{{ url.lastValidated|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+

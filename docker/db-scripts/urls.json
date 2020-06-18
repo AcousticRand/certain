@@ -1,0 +1,299 @@
+[{
+  "_id": {
+    "$oid": "5edf9406ced7ef7f5e724d83"
+  },
+  "url": "www.asics.com",
+  "customer": "ASI",
+  "path": "ca/en-ca/",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:06.811Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf941fced7ef7f5e724d84"
+  },
+  "url": "www.bludot.com",
+  "customer": "BS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:31.955Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf941fced7ef7f5e724d85"
+  },
+  "url": "www.bludot.com.au",
+  "customer": "BS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:31.979Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf941fced7ef7f5e724d86"
+  },
+  "url": "www.bludotmexico.com",
+  "customer": "BS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:31.993Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d87"
+  },
+  "url": "canada.waterford.com",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.738Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d88"
+  },
+  "url": "row.royalalbert.com",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.763Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d8a"
+  },
+  "url": "row.waterford.com",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.788Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d8b"
+  },
+  "url": "row.wedgwood.com",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.795Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d8c"
+  },
+  "url": "www.royalalbert.co.uk",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.802Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d8d"
+  },
+  "url": "www.royalalbert.eu",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.810Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d90"
+  },
+  "url": "www.waterford.com",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.833Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d91"
+  },
+  "url": "www.waterford.co.uk",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.840Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d92"
+  },
+  "url": "www.waterford.eu",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.849Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d93"
+  },
+  "url": "www.wedgwood.co.uk",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.860Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9421ced7ef7f5e724d94"
+  },
+  "url": "www.wedgwood.eu",
+  "customer": "WWRD",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:33.868Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9424ced7ef7f5e724d95"
+  },
+  "url": "partner.pax.com",
+  "customer": "PBS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:36.677Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9426ced7ef7f5e724d96"
+  },
+  "url": "www.dnaappstore.com",
+  "customer": "OPS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:38.428Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9427ced7ef7f5e724d97"
+  },
+  "url": "www.ecklers.com",
+  "customer": "CKLRS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:39.155Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf9427ced7ef7f5e724d98"
+  },
+  "url": "www.kraftmusic.com",
+  "customer": "KRFT",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:39.746Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d99"
+  },
+  "url": "www.vermontteddybear.com",
+  "customer": "VTB",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.408Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9a"
+  },
+  "url": "www.pajamagram.com",
+  "customer": "VTB",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.440Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9b"
+  },
+  "url": "www.pajamajeans.com",
+  "customer": "VTB",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.454Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9c"
+  },
+  "url": "www.pharmaca.com",
+  "customer": "PHA",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.466Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9d"
+  },
+  "url": "www.smileycookie.com",
+  "customer": "SCS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.475Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9e"
+  },
+  "url": "www.toolpartsdirect.com",
+  "customer": "TPDS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.486Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724d9f"
+  },
+  "url": "www.wincraft.com",
+  "customer": "WNS",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.496Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da0"
+  },
+  "url": "yourlabelsnow.com",
+  "customer": "YLN",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.506Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da1"
+  },
+  "url": "shopthefarm.com",
+  "customer": "ZOR",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.517Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da2"
+  },
+  "url": "jpmcstore.com",
+  "customer": "ZOR",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.528Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da3"
+  },
+  "url": "www.suncast.com",
+  "customer": "SUN",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.539Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da4"
+  },
+  "url": "www.suncastcommercial.com",
+  "customer": "SUN",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.551Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da5"
+  },
+  "url": "exltube.com",
+  "customer": "SP",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.564Z"
+  }
+},{
+  "_id": {
+    "$oid": "5edf942aced7ef7f5e724da6"
+  },
+  "url": "store.steelandpipe.com",
+  "customer": "SP",
+  "lastValidated": {
+    "$date": "2020-06-04T13:52:42.575Z"
+  }
+}]

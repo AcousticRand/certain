@@ -21,16 +21,14 @@ class UrlController extends AbstractController
      */
     public function list(DocumentManager $dm): Response
     {
-        $out = '';
+        // $urls = $dm->getRepository(Url::class)->findBy([], ['customer' => 'ASC', 'url' => 'ASC']);
 
-        $urls = $dm->getRepository(Url::class)->findAll();
-
-        /** @var Url $url */
-        foreach($urls as $url) {
-            $out .= sprintf("<h2>%s: === %s</h2>", $url->getUrl(), $url->getCustomer());
-        }
-
-        return new Response($out);
+        return $this->render(
+            'url/url.list.html.twig',
+            [
+                'urls' => $dm->getRepository(Url::class)->findBy([], ['customer' => 'ASC', 'url' => 'ASC'])
+            ]
+        );
     }
 
 }

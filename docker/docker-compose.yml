@@ -12,8 +12,8 @@ services:
   web:
     image: webdevops/apache:alpine
     ports:
-      - "80:80"
-      - "443:443"
+      - "8081:80"
+      - "8444:443"
     links:
       - php
     volumes:

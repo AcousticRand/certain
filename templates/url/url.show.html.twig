@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {%  if role is null %}
+        <h1>No such role exists!</h1>
+    {% else %}
+        <h1>Personnel in Role</h1>
+        <h2>{{ role.code }}: {{ role.name }}</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Roles</th>
+                <th>Links</th>
+            </tr>
+            {# @var personnel Personnel[] #}
+            {% for person in personnel %}
+                <tr>
+                    <td>{{ person.lastNameFirst }}</td>
+                    <td>{{ person.code }}</td>
+                    <td>
+                        {% for prole in person.roles %}
+                            <a href="{{ path('role_show', {roleKey: prole}) }}">{{ prole }}</a>
+                        {% endfor %}
+                    </td>
+                    <td><a href="{{ path('personnel_show', {code: person.code}) }}">View Person</a></td>
+                </tr>
+            {% else %}
+                <tr><td colspan="3">No personnel in role!</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock %}
+

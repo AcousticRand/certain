@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>URLs</h1>
+    <table>
+        <tr>
+            <th>URL</th>
+            <th>Path</th>
+            <th>Client</th>
+            <th>Expire Date</th>
+            <th>Last Checked</th>
+        </tr>
+        {# @var urls Url[] #}
+        {# @var url Url #}
+        {% for url in urls %}
+            <tr>
+                <td>{{ url.url }}</td>
+                <td>{{ url.path }}</td>
+                <td><a href="{{ path('customer_show', {customerCode: url.customer }) }}">{{ url.customer }}</a></td>
+                <td>{{ url.expireDate|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
+                <td>{{ url.lastValidated|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
+            </tr>
+        {% else %}
+            <tr><td colspan="3">No URLs defined!</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
