@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Document\Customer;
 use App\Document\Personnel;
+use App\Document\Url;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,11 +45,19 @@ class PersonnelController extends AbstractController
         /** @var Customer[] $customers */
         $customers = $dm->getRepository(Customer::class)->findBy(['pm' => $code], ['company' => 'ASC']);
 
+        /** @var Url[] $urlResults */
+        $urlResults = $dm->getRepository(Url::class)->findAll();
+        $urls = [];
+        foreach($urlResults as $url) {
+            $urls[$url->getCustomer()][] = $url;
+        }
+
         return $this->render(
             'customer/customer.html.twig',
             [
                 'person' => $person,
-                'customers' => count($customers) === 0 ? null : $customers
+                'customers' => count($customers) === 0 ? null : $customers,
+                'urls' => $urls
             ]
         );
     }

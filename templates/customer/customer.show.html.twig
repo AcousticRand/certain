@@ -27,8 +27,7 @@
             <td>{{ customer.platform }}</td>
         </tr>
         <tr>
-            <th>URLs</th>
-            <td>
+            <td colspan="2">
                 {% if urls is null %}
                     (No urls for this customer.)
                 {% else %}
@@ -41,8 +40,8 @@
                     {% for url in urls %}
                         <tr>
                             <td><a href="https://{{ url.url }}/{{ url.path }}">https://{{ url.url }}/{{ url.path }}</a></td>
-                            <td>{{ url.expireDate|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
-                            <td>{{ url.lastValidated|date('M d, Y h:i:s A', 'America/Chicago') }}</td>
+                            <td>{{ url.expireDate|date('M d, Y g:i:s A', 'America/Chicago') }}</td>
+                            <td>{{ url.lastValidated|date('M d, Y g:i:s A', 'America/Chicago') }}</td>
                         </tr>
                     {% endfor %}
                     </table>

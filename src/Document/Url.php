@@ -111,13 +111,7 @@ class Url
      */
     public function getExpireDate()
     {
-        if (
-            is_null($this->expireDate) ||
-            ($this->getLastValidated() < new DateTime("now -1 hour"))
-        ) {
-            // get new expire date
-            $this->setCertificateInfo();
-        }
+        $this->isExpireDateCached();
 
         return $this->expireDate;
     }
@@ -148,6 +142,31 @@ class Url
     {
         $this->lastValidated = $lastValidated;
         return $this;
+    }
+
+    /**
+     * Is the expire date cached?
+     * If so, return true
+     * If not, return false
+     *
+     * @return bool
+     * @throws Exception
+     */
+    public function isExpireDateCached(): bool
+    {
+        $updated     = true;
+        $dateCompare = new DateTime("now -1 hour");
+
+        if (
+            is_null($this->expireDate) ||
+            ($this->getLastValidated() < $dateCompare)
+        ) {
+            // get new expire date
+            $this->setCertificateInfo();
+            $updated = false;
+        }
+
+        return $updated;
     }
 
     /**
@@ -210,7 +229,7 @@ class Url
         }
 
         $this->setExpireDate($expireDate);
-        $this->setLastValidated(new DateTime());
+        $this->setLastValidated(new DateTime("now"));
     }
 
     /**
@@ -234,6 +253,11 @@ class Url
         return (int) (new DateTime())->diff($this->expireDate)->format("%a");
     }
 
+    /**
+     * @param array $a
+     * @param array $b
+     * @return int
+     */
     public static function aSortByDate(array $a, array $b) : int
     {
         /** @var Url $url_a */
@@ -244,6 +268,11 @@ class Url
         return (self::sortByDate($url_a, $url_b));
     }
 
+    /**
+     * @param Url $a
+     * @param Url $b
+     * @return int
+     */
     public static function sortByDate(Url $a, Url $b) : int
     {
         if ($a->expireDate === $b->expireDate) {

@@ -15,11 +15,12 @@
             {# @var customers Customer[] #}
             {% for customer in customers %}
                 <tr>
-                    <td>{{ customer.code }}</td>
+                    <td><a href="{{ path('customer_show', {customerCode: customer.code}) }}">{{ customer.code }}</a></td>
                     <td>{{ customer.company }} ({{ customer.name }})</td>
                     <td>
-                        {%  for url in customer.urls %}
-                        {{ url['url'] }}</br>
+                        {# @var url Url #}
+                        {% for url in urls[customer.code] %}
+                        {{ url.url }}<br/>
                         {% endfor %}
                     </td>
                 </tr>
